@@ -114,6 +114,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Illuminate\Remote\RemoteServiceProvider',
+		'Artdarek\OAuth\OAuthServiceProvider',
 		
         /* Additional Providers */
         'Zizaco\Confide\ConfideServiceProvider', // Confide Provider
@@ -189,6 +190,7 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+		'OAuth' => 'Artdarek\OAuth\Facade\OAuth',
 
         /* Additional Aliases */
         'Confide'         => 'Zizaco\Confide\ConfideFacade', // Confide Alias

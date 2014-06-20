@@ -14,11 +14,10 @@ class OauthController extends BaseController {
 		if ( !empty( $code ) ) {
 				$token = $fb->requestAccessToken( $code );
 				$result = json_decode( $fb->request( '/me?fields=id' ), true );
-
-				$data = array('network_id' =>  $result['id'], 'network' => 'facebook' , 'token' => $token);
+				$data = array('network_id' =>  $result['id'], 'network' => 'facebook');
 				Token::where('network_id', '=', $result['id']);
-							
-				return View::make('site/user/create', compact('result'))->with('success', Lang::get('admin/blogs/messages.create.success'));
+				Session::flash('success', 'Thankyou for logging in using Facebook. Please complete the form to complete registration.');
+				return View::make('site/user/create', compact('data'));
 		}
 		else {
 			$url = $fb->getAuthorizationUri();

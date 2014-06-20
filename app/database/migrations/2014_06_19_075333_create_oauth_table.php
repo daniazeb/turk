@@ -18,7 +18,6 @@ class CreateOauthTable extends Migration {
 			$table->integer('user_id');
 			$table->string('netowrk');
 			$table->text('network_id');
-			$table->text('access_token');
 			$table->timestamps();
 		});
 	}

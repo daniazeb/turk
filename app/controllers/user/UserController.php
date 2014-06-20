@@ -37,7 +37,7 @@ class UserController extends BaseController {
      *
      */
     public function postIndex()
-    {
+	{
         $this->user->username = Input::get( 'username' );
         $this->user->email = Input::get( 'email' );
 
@@ -141,10 +141,11 @@ class UserController extends BaseController {
      *
      */
     public function getCreate()
-    {
-        return View::make('site/user/create');
-    }
+	{
 
+		$data = array('network_id' => '', 'network' => '');
+        return View::make('site/user/create', compact('data'));
+	}
 
     /**
      * Displays the login form
