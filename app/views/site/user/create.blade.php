@@ -17,7 +17,18 @@
     <input type="hidden" name="network_id" value="{{{ Input::old('network_id') ? Input::old('network_id') : $data['network_id']  }}}">
 
 	<fieldset>
-	<div class="form-group">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Login with Social Networks</h3>
+  </div>
+  <div class="panel-body">
+	<a href="{{{ URL::to('oauth/facebook') }}}" class="zocial facebook">Sign in with Facebook</a>
+	<a href="{{{ URL::to('oauth/google') }}}" class="zocial googleplus">Sign in with Google+</a>
+	<a href="{{{ URL::to('oauth/twitter') }}}" class="zocial twitter">Sign in with Twitter</a>
+	<a href="{{{ URL::to('oauth/linkedin') }}}" class="zocial linkedin">Sign in with LinkedIn</a>
+  </div>
+</div>
+		<div class="form-group">
             <label for="username">{{{ Lang::get('confide::confide.username') }}}</label>
             <input class="form-control" placeholder="{{{ Lang::get('confide::confide.username') }}}" type="text" name="username" id="username" value="{{{ Input::old('username') }}}">
 	</div>
